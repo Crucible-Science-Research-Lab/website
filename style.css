@@ -5,10 +5,178 @@
 }
 
 body {
-  background-color: #0a0e0a;
-  color: #33ff33;
+  background-color: #080810;
+  color: #b4d4f5;
   font-family: 'Courier New', Courier, monospace;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+/* STATIC TOP ZONE */
+.static-zone {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 0.8rem;
+}
+
+/* LOGO CONTAINER */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cs-logo {
+  width: 130px;
+  height: 130px;
+  filter: drop-shadow(0 0 6px #5588bb);
+  animation: logo-pulse 4s ease-in-out 2.5s infinite;
+}
+
+/* STATIC flask parts */
+.outer-ring,
+.flask-part {
+  fill: none;
+  stroke: #5588bb;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* .outer-ring {
+  stroke-dasharray: 327;
+  stroke-dashoffset: 327;
+  animation: draw-circle 2s ease forwards,
+             logo-pulse 4s ease-in-out 2.5s infinite;
+} */
+
+.flask-part {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-line 1s ease forwards 1.5s;
+}
+
+/* ROTATING crystal core — yin-yang inside flask belly */
+.crystal-core {
+  transform-origin: 60px 82px;
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards 2.5s,
+             crystal-spin 5s linear 3s infinite;
+}
+
+.yang-curve {
+  fill: none;
+  stroke: #00ccff;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.yin-curve {
+  fill: none;
+  stroke: #ff8833;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.yang-dot {
+  fill: #00ccff;
+  stroke: none;
+}
+
+.yin-dot {
+  fill: #ff8833;
+  stroke: none;
+}
+
+/* KEYFRAMES */
+@keyframes draw-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes logo-pulse {
+  0%, 100% { filter: drop-shadow(0 0 6px #5588bb); }
+  50%       { filter: drop-shadow(0 0 16px #00ccff); }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+@keyframes crystal-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-shadow: 0 0 1px #e5ebf0;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #00ccff;
+}
+
+.descriptor {
+  font-size: 0.8rem;
+  color: #cc7722;
+}
+
+.domains {
+  font-size: 0.75rem;
+  color: #b4d4f5;
+  letter-spacing: 0.1rem;
+}
+
+/* BOUNDARY */
+.boundary {
+  height: 2px;
+  overflow: hidden;
+}
+
+.boundary-line {
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #2c8222, #00ccff, #b4d4f5, transparent);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* LIVE BOTTOM ZONE */
+.live-zone {
+  height: 58vh;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  overflow: hidden;
+}
+
+.terminal-header {
+  color: #00ccff;
+  font-size: 0.85rem;
+  letter-spacing: 0.2rem;
+}
+
+#terminal-output {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #b4d4f5;
+  flex: 1;
 }

@@ -7,7 +7,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Search finds Information. Research discovers Knowledge.</p>
+
+  <div class="static-zone">
+    <div class="logo-container">
+      <svg class="cs-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- STATIC: outer ring -->
+        <!-- <circle class="outer-ring" cx="60" cy="60" r="52"/> -->
+
+        <!-- STATIC: flask neck and rim -->
+        <line class="flask-part" x1="53" y1="25" x2="53" y2="45"/>
+        <line class="flask-part" x1="67" y1="25" x2="67" y2="45"/>
+        <line class="flask-part" x1="50" y1="25" x2="70" y2="25"/>
+
+        <!-- STATIC: flask body -->
+        <circle class="flask-part" cx="60" cy="82" r="36"/>
+
+        <!-- ROTATING: yin-yang crystal inside flask belly -->
+        <g class="crystal-core">
+          <path class="yang-curve" d="M60,60 A11,11 0 0,1 60,82 A11,11 0 0,0 60,104"/>
+          <path class="yin-curve"  d="M60,60 A11,11 0 0,0 60,82 A11,11 0 0,1 60,104"/>
+          <circle class="yang-dot" cx="60" cy="71" r="4"/>
+          <circle class="yin-dot"  cx="60" cy="93" r="4"/>
+        </g>
+
+      </svg>
+      <div class="logo-text">CRUCIBLE SCIENCE</div>
+    </div>
+    <div class="tagline">Search finds Information. Research discovers Knowledge.</div>
+    <!-- <div class="domains">
+      Patent Analysis &nbsp;·&nbsp; Drug Discovery &nbsp;·&nbsp; Fusion Research
+    </div> -->
+  </div>
+
+  <div class="boundary">
+    <div class="boundary-line"></div>
+  </div>
+
+  <div class="live-zone">
+    <div class="terminal-header">▸ ACTIVE CRUCIBLE SESSION</div>
+    <div id="terminal-output"></div>
+  </div>
+
   <script src="terminal.js"></script>
 </body>
 </html>
