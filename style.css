@@ -148,7 +148,7 @@ body {
 }
 
 .boundary-line {
-  height: 100%;
+  height: 50%;
   background: linear-gradient(90deg, transparent, #2c8222, #00ccff, #b4d4f5, transparent);
   animation: scan 3s linear infinite;
 }
